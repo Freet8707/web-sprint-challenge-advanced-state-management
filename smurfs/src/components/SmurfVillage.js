@@ -27,8 +27,9 @@ const SmurfVillage = (props) => {
             {props.smurfData.length > 0 ? props.smurfData.map(smurf => {
                 return (<SmurfCard smurf={smurf} key={smurf.id}/>)
             }) : <p style={{color: 'red'}}>There is no data to display</p>}
+            {props.error.length > 0 ? <p style={{color: 'red'}}>{props.error}</p> : null}
             <button onClick={() => setFormShow(!formShow)}>Add A Smurf!</button>
-            {formShow ? <AddASmurf /> : <></>}
+            {formShow ? <AddASmurf setFormShow={setFormShow} /> : <></>}
         </div>
     )
 }
