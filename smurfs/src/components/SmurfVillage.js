@@ -13,9 +13,10 @@ const SmurfCard = props => {
 }
 
 const SmurfVillage = (props) => {
-
+    const { getSmurfs } = props
+    
     useEffect(() => {
-        props.getSmurfs()
+        getSmurfs()
     }, [])
     
     return (
