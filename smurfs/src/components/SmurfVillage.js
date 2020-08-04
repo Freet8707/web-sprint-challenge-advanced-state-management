@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 import { getSmurfs } from '../actions/actions'
+
+import AddASmurf from './AddASmurf'
 
 const SmurfCard = props => {
     return (
@@ -13,8 +15,9 @@ const SmurfCard = props => {
 }
 
 const SmurfVillage = (props) => {
-    const { getSmurfs } = props
-    
+    const { getSmurfs } = props;
+    const [formShow, setFormShow] = useState(false)
+
     useEffect(() => {
         getSmurfs()
     }, [])
@@ -24,6 +27,8 @@ const SmurfVillage = (props) => {
             {props.smurfData.length > 0 ? props.smurfData.map(smurf => {
                 return (<SmurfCard smurf={smurf} key={smurf.id}/>)
             }) : <p style={{color: 'red'}}>There is no data to display</p>}
+            <button onClick={() => setFormShow(!formShow)}>Add A Smurf!</button>
+            {formShow ? <AddASmurf /> : <></>}
         </div>
     )
 }
