@@ -16,11 +16,13 @@ export const reducer = (state = initialState, action) => {
         case FETCH_SMURFS_SUCCESS :
             return {
                 ...state,
+                smurfs: action.payload,
                 isFetching: false
             }
         case FETCH_SMURFS_ERROR :
             return {
                 ...state,
+                error: action.payload,
                 isFetching: false
             }
         default:

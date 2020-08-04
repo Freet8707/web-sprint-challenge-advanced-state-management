@@ -8,10 +8,9 @@ import App from "./components/App";
 
 import { reducer } from './reducer/reducer'
 
-const store = createStore(reducer, applyMiddleware(thunk))
+const store = createStore(reducer, applyMiddleware(thunk));
 
-ReactDOM.render(
-    <Provider store={store}>
+ReactDOM.render(<Provider store={store}>
         <App />
     </Provider>,
     document.getElementById("root")
