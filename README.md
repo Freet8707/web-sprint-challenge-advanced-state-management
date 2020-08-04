@@ -24,10 +24,15 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What problem does the context API help solve?
+  The context API solves the issure wherein state can be accessed in any component, regardless of how deeply nested, by using the 'context' object. 
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+  Actions are values which are simply strings but when passed to a reducer function are interpreted as a type case in the switch / case syntax within the reducer, performing some type of state manipulation in response to the specific action passed in and a payload value. The store is created as a variable reference in a top-level component that uses the reducer as a form of state that is universal across the application.
 3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+  Component state is local to the component itself unless it is passed down as props to a nested components.  Application state is created using methods of either 'Redux' or 'Context API' and is a way that state can be managed in one place and referenced anywhere in an application
 4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+  Redux-thunk is a dependency that when added to a React application, allows a function to be nested within another function, which is where the dispatch keyword comes from for use in the nested function.  Dispatch can then be used multiple times, allowing for such things as creating action types for various case scenarios, such as pass / fail in an axios call.
 5. What is your favorite state management system you've learned and this sprint? Please explain why!
+  My favorite state management to use is definitely Redux, mainly because of how syntactically obvious the convention for its use is.  It really helps me to understand the 'why' and the purpose of what each piece of code will do.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 

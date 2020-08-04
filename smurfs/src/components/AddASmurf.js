@@ -31,7 +31,7 @@ const AddASmurf = (props) => {
     
     return (
         <>
-            <form onSubmit={handleSubmit} label='addSmurf'>
+            <form style={{marginBottom: '50px'}} onSubmit={handleSubmit} label='addSmurf'>
                 <label htmlFor='name' />
                 <input
                     type='text'
