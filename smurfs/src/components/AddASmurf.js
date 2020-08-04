@@ -13,8 +13,7 @@ const AddASmurf = (props) => {
     const handleInput = e => {
         setNewSmurf({
             ...newSmurf,
-            [e.target.name]: e.target.value,
-            id: Math.random()
+            [e.target.name]: e.target.value
         })
     }
 
